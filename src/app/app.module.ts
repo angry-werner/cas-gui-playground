@@ -3,10 +3,12 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { TwitterFeedComponent } from './twitter-feed/twitter-feed.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TwitterFeedComponent
   ],
   imports: [
     BrowserModule,
