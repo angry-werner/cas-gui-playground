@@ -11,8 +11,9 @@ export class TwitterFeedComponent {
 
   constructor() {
     this.tweets = [];
-    let foo = this.tweets;
-    this.webSocket = new WebSocket('ws://localhost:3001');
-    this.webSocket.onmessage = (message) => foo.unshift(JSON.parse(message.data).text);
+    (function(tweets) {
+      const webSocket = new WebSocket('ws://localhost:3001');
+      webSocket.onmessage = (message) => tweets.unshift(JSON.parse(message.data).text);
+    }(this.tweets));
   }
 }
